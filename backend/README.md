@@ -2,10 +2,13 @@
 
 ## Running Instructions
 ### Dev notes to self
-To start up the celery+redis task queue, run the following commands:
+To start up the celery+redis task queue, run the following commands from the root directory:
 ```
 redis-server
-celery -A celery_app.celery_app worker --loglevel=info -I tasks.parser -I tasks.tts
+celery -A backend.celery_app.celery_app worker -l info
+
+export FLASK_APP=backend.app
+export FLASK_ENV=development
 flask run --host=0.0.0.0 --port=5001
 ```
 

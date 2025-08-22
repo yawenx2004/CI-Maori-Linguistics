@@ -1,4 +1,4 @@
-from celery_app import celery_app
+from backend.celery_app import celery_app
 
 # let's pretend tts is multiplication
 @celery_app.task
