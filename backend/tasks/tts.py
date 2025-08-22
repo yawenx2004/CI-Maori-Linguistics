@@ -1,8 +1,8 @@
 from backend.celery_app import celery_app
 
-# let's pretend tts is multiplication
+# let's pretend tts just echoes back the task
 @celery_app.task
-def tts(x: int, y: int) -> int:
-    result = x * y
-    print("Multiply task result: ", result)
-    return result
+def tts(txt: str) -> str:
+    result = txt
+    print("TTS result: ", result)
+    return txt
