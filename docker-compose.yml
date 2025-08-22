@@ -1,0 +1,42 @@
+services:
+  redis:
+    image: redis:6.2
+    ports:
+      - "6380:6379"
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.backend
+    environment:
+      FLASK_APP: app
+      FLASK_ENV: development
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/0
+      PYTHONPATH: /app
+    depends_on:
+      - redis
+    ports:
+      - "5001:5001"
+
+  celery:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.backend
+    command: celery -A celery_app.celery_app worker -l info
+    environment:
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/0
+      PYTHONPATH: /app
+    depends_on:
+      - redis
+      - backend
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend

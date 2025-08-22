@@ -1,3 +1,4 @@
-flask=3.0.3
-celery=5.5.3
-redis=6.6.1
+flask==3.0.3
+flask-cors==3.0.10
+celery==5.5.3
+redis==6.2.0
