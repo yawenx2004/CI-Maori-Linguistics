@@ -1,5 +1,14 @@
 # Cook Islands Māori Linguistics Interface: Backend
 
+## How It Works
+**Tech stack:**
+- Flask backend server
+- Celery + Redis task queue
+
+The main issue with the original code was that upon receiving a request, the Flask backend would directly execute tasks and then launch multiple heavy tasks in parallel, effectively overwhelming the server.
+
+With the Celery + Redis task queue, there is a fixed number of Celery workers, one per type of task. Every time a /POST request is received, it goes into the Redis queue. The appropriate Celery worker then processes tasks in the Redis queue one by one, thus avoiding blocking the entire backend server. 
+
 ## Running Instructions
 ### Dev notes to self
 To start up the celery+redis task queue, run the following commands from the root directory:
