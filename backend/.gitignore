@@ -1,0 +1,11 @@
+node_modules/
+.vscode/
+*.env
+globalConfig.json
+yarn-error.log
+dist
+coverage/
+dist/
+static/
+__pycache__
+dump.rdb

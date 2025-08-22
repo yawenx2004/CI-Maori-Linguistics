@@ -1,0 +1,88 @@
+.bar-container {
+    background-color: white;
+    border-radius: 1em;
+    box-shadow: 2px 4px 8px rgb(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+.model-input > .bar-container-title {
+    color: white;
+    font-weight: 600;
+    background-color: #1f468a;
+    padding: 2em;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+}
+
+.bar-container-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+button {
+    color: white;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border: none;
+    background-color: #1f468a;
+    border-radius: 1em;
+}
+
+button:hover {
+    background-color: #275ebd;
+    transition: all 0.2s ease;
+}
+
+button:disabled {
+    background-color: #d3d9e7;
+}
+
+.button-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+/// dropzone
+.dropzone-container {
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: 3/1;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f6fa;
+    border: 2px dashed #d3d9e7;
+    border-radius: 0.5em;
+}
+
+.highlight {
+    color: #1f468a;
+    text-decoration: underline;
+}
+
+// select
+select {
+    width: 50%;
+    padding: 0.5em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    border-radius: 0.5em;
+    font-size: 0.9em;
+}
+
+select:invalid {
+  color: #acb1bb;
+}
+
+.model-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}

@@ -1,0 +1,43 @@
+.front-page {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    padding: 2em;
+}
+
+.left-bar {
+    // background-color: #b6c9ec;
+    width: 30%;
+}
+
+.bar-container {
+    background-color: white;
+    border-radius: 1em;
+    box-shadow: 2px 4px 8px rgb(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+.bar-container-title {
+    color: white;
+    font-weight: 600;
+    background-color: #062160;
+    padding: 2em;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+}
+
+.task-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    padding: 1em;
+}
+
+.task-options {
+    display: flex;
+    gap: 0.5em;
+}
+
+.right-bar {
+    width: 70%;
+}

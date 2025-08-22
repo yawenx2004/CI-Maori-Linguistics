@@ -1,0 +1,52 @@
+h2.about {
+    background-color: #1f468a;
+}
+
+h2.about:hover {
+    background-color: #3770d2;
+    transition: all 0.2s ease;
+}
+
+.about-section {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 1em;
+    box-shadow: 2px 4px 8px rgb(0, 0, 0, 0.25);
+}
+
+.about-section:hover {
+    transform: scale(1.01);
+    transition: all 0.2s ease;
+}
+
+.about-answer {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 2em;
+    padding-bottom: 3em;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.iframe {
+    width: 75%;
+    aspect-ratio: 16 / 9;
+    border-radius: 0.5em;
+    overflow: hidden;
+}
+
+.audio-container {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 75%;
+    border-radius: 0.5em;
+}
