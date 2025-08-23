@@ -4,7 +4,7 @@ import time
 from celery_app import celery_app
 
 # import routes
-from routes import tts_bp
+from routes import tts_bp, parser_bp
 
 app = Flask(__name__)
 CORS(app)
@@ -12,6 +12,7 @@ CORS(app)
 # register blueprints
 ## actual routes
 app.register_blueprint(tts_bp)
+app.register_blueprint(parser_bp)
 
 ## test routes
 @app.route('/time')
