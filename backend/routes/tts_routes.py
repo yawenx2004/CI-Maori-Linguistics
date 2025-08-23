@@ -1,6 +1,6 @@
 from flask import Blueprint, request
-from backend.tasks.tts import tts
-from backend.celery_app import celery_app
+from tasks.tts import tts
+from celery_app import celery_app
 
 tts_bp = Blueprint("tts", __name__)
 

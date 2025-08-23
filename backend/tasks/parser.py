@@ -1,4 +1,4 @@
-from backend.celery_app import celery_app
+from celery_app import celery_app
 
 # let's pretend parser = addition
 @celery_app.task

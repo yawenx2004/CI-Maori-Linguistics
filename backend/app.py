@@ -1,10 +1,10 @@
 from flask import Flask, request
 from flask_cors import CORS
 import time
-from backend.celery_app import celery_app
+from celery_app import celery_app
 
 # import routes
-from backend.routes import tts_bp
+from routes import tts_bp
 
 app = Flask(__name__)
 CORS(app)

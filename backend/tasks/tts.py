@@ -1,6 +1,6 @@
-from backend.celery_app import celery_app
+from celery_app import celery_app
 
-# let's pretend tts just removes all the e's
+# let's pretend tts just reverses the utterance
 @celery_app.task
 def tts(txt: str) -> str:
     result = ''
