@@ -56,7 +56,6 @@ export default function TTS(props) {
 
       <div className="bar-container-content">
         <p>Enter text for speech audio:</p>
-        <p>XXX describe constraints of text file; also right now it just inverts the text for you & logs it in the console.</p>
         <TextInputForm
           value={text}
           onChange={(e) => setText(e.target.value)}
