@@ -55,7 +55,7 @@ export default function Parser(props) {
       </div>
 
       <div className="bar-container-content">
-        <p>Enter text for parsing:</p>
+        <p>Enter text for parsing.</p>
         <TextInputForm
           value={text}
           onChange={(e) => setText(e.target.value)}

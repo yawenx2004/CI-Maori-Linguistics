@@ -10,7 +10,7 @@ body, html {
 
     color: black;
     box-sizing: border-box;
-    background-color: #e6e9f1;
+    background-color: #e6e8ef;
 }
 :root {
     text-size-adjust: 100%;
@@ -18,7 +18,7 @@ body, html {
     // TODO
     --h1-blue: #121f3d;
     --standard-blue: #062160;
-    --light-blue: #d3d9e7;
+    --light-blue: #c4cfe8;
 }
 .active {
     color: white;
@@ -99,8 +99,8 @@ ul.nav {
 li.nav {
     color: white;
     list-style: none;
-    font-weight: 500;
-    font-size: 1.2em;
+    font-weight: 600;
+    font-size: 1em;
 }
 .NavLink {
     text-decoration: none;
@@ -116,6 +116,10 @@ li.nav {
     transition: all 0.3s ease;
 }
 .NavLink.cta {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
     color: white;
     background-color: #1f468a;
     padding: 1em;
@@ -124,9 +128,19 @@ li.nav {
     border-radius: 1em;
     box-shadow: 2px 4px 8px rgb(0, 0, 0, 0.25);
 }
-.NavLink.cta:hover {
+.NavLink.cta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
     background-color: #3770d2;
+    z-index: -1;
     transition: all 0.3s ease;
+}
+.NavLink.cta:hover::before {
+    width: 100%;
 }
 /////// pages ///////
 .page {

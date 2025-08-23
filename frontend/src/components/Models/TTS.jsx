@@ -55,7 +55,7 @@ export default function TTS(props) {
       </div>
 
       <div className="bar-container-content">
-        <p>Enter text for speech audio:</p>
+        <p>Enter text for speech audio.</p>
         <TextInputForm
           value={text}
           onChange={(e) => setText(e.target.value)}

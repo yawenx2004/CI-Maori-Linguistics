@@ -23,25 +23,37 @@
     padding-right: 2em;
 }
 
-button {
-    color: white;
-    font-size: 1em;
-    font-weight: 600;
-    padding: 2em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    border: none;
-    background-color: #1f468a;
-    border-radius: 1em;
+button:not(.remove-file) {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  font-size: 1em;
+  font-weight: 600;
+  padding: 0.5em 2em;
+  border: none;
+  background-color: #1f468a;
+  border-radius: 1em;
+  z-index: 1;
 }
 
-button:hover {
-    background-color: #275ebd;
-    transition: all 0.2s ease;
+button:not(.remove-file)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #3770d2;
+  z-index: -1;
+  transition: width 0.3s ease;
 }
 
-button:disabled {
-    background-color: #d3d9e7;
+button:not(.remove-file):not(:disabled):hover::before {
+  width: 100%;
+}
+
+button:not(.remove-file):disabled {
+    background-color: #c4cfe8;
 }
 
 .button-container {
@@ -54,12 +66,47 @@ button:disabled {
 .dropzone-container {
     display: flex;
     flex-direction: column;
-    aspect-ratio: 3/1;
     justify-content: center;
     align-items: center;
-    background-color: #f5f6fa;
-    border: 2px dashed #d3d9e7;
+    padding: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    aspect-ratio: 3/1;
+    // background-color: #c4cfe8;
+    border: 2px dashed #c4cfe8;
     border-radius: 0.5em;
+
+    &.has-file {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0;
+        aspect-ratio: auto;
+        // background-color: #d4f8d4;
+        // border-color: #2ecc71;
+        border: none;
+  }
+}
+
+.uploaded-file {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    background-color: #d4f8d4;
+    border-radius: 0.5em;
+}
+
+.remove-file {
+    font-size: 1.5em;
+    font-weight: 400;
+    color: black;
+    background: none;
+    border: none;
 }
 
 .highlight {

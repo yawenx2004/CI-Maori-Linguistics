@@ -49,21 +49,34 @@ export default function ASRFileUpload(props) {
           &nbsp; files.
       </p>
 
-      <div {...getRootProps({ className: 'dropzone-container' })} role="button" tabIndex={0}>
+      <div
+        {...getRootProps({
+          className: `dropzone-container ${uploadedFilename ? 'has-file' : ''}`,
+        })}
+        role="button"
+        tabIndex={0}
+      >
         <input {...getInputProps()} />
         {uploadedFilename ? (
-          <p>
-            ✅&nbsp;
-            <strong>{uploadedFilename}</strong>
-          </p>
-        ) : (
-          <>
-            <p>Drag & drop your file here</p>
+          <div className="uploaded-file">
             <p>
-              or&nbsp;
-              <span className="highlight">click to browse</span>
+              ✅
+              {' '}
+              <strong>{uploadedFilename}</strong>
             </p>
-          </>
+            <button
+              className="remove-file"
+              onClick={() => setUploadedFilename(null)}
+            >
+              &#xD7;
+            </button>
+          </div>
+        ) : (
+          <p>
+            Drag & drop your file here or
+            {' '}
+            <span className="highlight">click to browse</span>
+          </p>
         )}
       </div>
       <div className="button-container">
